@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import SearchInput from './SearchInput';
 import SearchResults from './SearchResults';
-import ChosenSong from './ChosenSong';
+import SelectedSong from './SelectedSong';
 
-export default function Search() {
+export default function Search({ onGenerateClicked }) {
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -43,17 +43,26 @@ export default function Search() {
         setSelectedSong(null);
     }
 
+    const handleGenerateClicked = () => {
+        if (selectedSong) {
+            onGenerateClicked(selectedSong);
+        }
+    }
+
     return (
         <div>
-            <SearchInput query={query} onInputChange={handleInputChange} />
+            <SearchInput onInputChange={handleInputChange} query={query} />
             {loading && (<p>Loading...</p>)}
             {(query && !loading) && (
-                <SearchResults searchResults={searchResults} onSongSelect={handleSongSelect} />
+                <SearchResults onSongSelect={handleSongSelect} searchResults={searchResults} />
             )}
             {(query && searchResults.length === 0 && !loading) && (
                 <p>No results found for "{query}"</p>
             )}
-            <ChosenSong chosenSong={selectedSong} handleSongDeselect={handleSongDeselect} />
+            <div>
+                <button disabled={!selectedSong} onClick={handleGenerateClicked}>GENERATE</button>
+            </div>
+            <SelectedSong onSongDeselect={handleSongDeselect} selectedSong={selectedSong} />
         </div>
     );
 }

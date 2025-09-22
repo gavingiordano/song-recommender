@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function RecommendationList() {
+export default function RecommendationList({ selectedSong }) {
     return (
-        <div>List of recommended songs</div>
+        <div>Test: Generate Button Clicked</div>
     );
 }
