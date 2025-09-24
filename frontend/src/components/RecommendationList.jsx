@@ -16,7 +16,7 @@ export default function RecommendationList({ selectedSong }) {
     const fetchRecommendations = async () => {
         setLoading(true)
         try {
-            const response = await fetch(`http://localhost:3000/recommendations?track=${selectedSong.name}&artist=${selectedSong.artist}`);
+            const response = await fetch(`http://localhost:3000/tracks/recommendations?track=${selectedSong.name}&artist=${selectedSong.artist}`);
             const data = await response.json();
             setTimeout(() => {
                 setRecs(data);

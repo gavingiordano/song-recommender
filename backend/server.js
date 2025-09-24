@@ -13,7 +13,7 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 
 
-app.get('/search', async (req, res) => {
+app.get('/tracks', async (req, res) => {
     const { search } = req.query;
     if (!search) {
         return res.status(400).json({ error: 'Missing search query. '});
@@ -33,7 +33,6 @@ app.get('/search', async (req, res) => {
         const tracks = data.results.trackmatches.track.map((track) => ({
             name: track.name,
             artist: track.artist,
-            image: track.image,
         }));
 
         return res.json(tracks);
@@ -44,7 +43,7 @@ app.get('/search', async (req, res) => {
 });
 
 
-app.get('/recommendations', async (req, res) => {
+app.get('/tracks/recommendations', async (req, res) => {
     const { track, artist } = req.query;
     if (!track || !artist) {
         return res.status(400).json({ error: 'Missing track or artist query.' });

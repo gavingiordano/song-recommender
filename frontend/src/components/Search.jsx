@@ -20,7 +20,7 @@ export default function Search({ onGenerateClicked }) {
     const fetchSearchResults = async (searchQuery) => {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:3000/search?search=${searchQuery}`);
+            const response = await fetch(`http://localhost:3000/tracks?search=${searchQuery}`);
             const data = await response.json();
             setTimeout(() => {
                 setSearchResults(data)
