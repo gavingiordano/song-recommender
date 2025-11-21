@@ -6,7 +6,7 @@ export default function SelectedSong({selectedSong, onSongDeselect}) {
             {selectedSong && (
                 <div>
                     <span>{selectedSong.name} - {selectedSong.artist}</span>
-                    <button onClick={onSongDeselect}>X</button>
+                    <button className='x-button' onClick={onSongDeselect}><strong>X</strong></button>
                 </div>
             )}  
         </div>

@@ -6,13 +6,13 @@ export default function SearchResults({ searchResults, onSongSelect }) {
     }
 
     return (
-        <ul>
+        <ul className='search-results'>
             {searchResults.map((track, index) => {
                 return(
-                    <li key={index} onClick={() => onSongSelect(track)}>
+                    <li className='search-result' key={index} onClick={() => onSongSelect(track)}>
                         <div>
                             <div>{track.name}</div>
-                            <div>{track.artist}</div>
+                            <div className='artist'>- {track.artist}</div>
                         </div>
                     </li>
                 );

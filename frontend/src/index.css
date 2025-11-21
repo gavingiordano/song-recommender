@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(21, 32, 42);
+    color: white;
+    font-family: 'Alan Sans', sans-serif;
+}
+
+.header {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+.search-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    max-width: 600px;
+    margin: 25px auto;
+    color: white;
+    font-family: 'Alan Sans';
+}
+
+.search-input input {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 0;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-results {
+    list-style: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 9px;
+    width: 100%;
+}
+
+.search-result {
+    cursor: pointer;
+    color: black;
+}
+
+.artist {
+    text-indent: 15px;
+    font-style: italic;
+}
+
+.search-result:hover {
+    background-color: gray;
+    border-radius: 9px;
+    padding: 5px;
+}
+
+button {
+    border: none;
+    background-color: rgb(122, 122, 122);
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(150, 150, 150);
+    cursor: pointer;
+}
+
+.generate-button {
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+.x-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 8px;
+}
+
+
+
+.recommendations-div {
+    text-align: center;
+    background-color: rgb(30, 40, 50);
+    border-radius: 9px;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.recs-list {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.recs-list li {
+    margin: 7px 0;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.recs-list li:hover {
+    background-color: rgb(45, 60, 80);
+}

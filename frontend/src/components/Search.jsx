@@ -50,7 +50,7 @@ export default function Search({ onGenerateClicked }) {
     }
 
     return (
-        <div>
+        <div className='search-div'>
             <SearchInput onInputChange={handleInputChange} query={query} />
             {loading && (<p>Loading...</p>)}
             {(query && !loading) && (
@@ -60,7 +60,7 @@ export default function Search({ onGenerateClicked }) {
                 <p>No results found for "{query}"</p>
             )}
             <div>
-                <button disabled={!selectedSong} onClick={handleGenerateClicked}>GENERATE</button>
+                <button className='generate-button' disabled={!selectedSong} onClick={handleGenerateClicked}><strong>GENERATE</strong></button>
             </div>
             <SelectedSong onSongDeselect={handleSongDeselect} selectedSong={selectedSong} />
         </div>

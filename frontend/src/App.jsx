@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <h1>SIMILAR SONG FINDER</h1>
+      <h1 className='header'>SIMILAR SONG FINDER</h1>
       <Search onGenerateClicked={handleGenerateRecs} />
       {generateButtonClicked && (
         <RecommendationList selectedSong={selectedSong} />

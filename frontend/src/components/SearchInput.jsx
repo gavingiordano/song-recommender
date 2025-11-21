@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SearchInput({ query, onInputChange }) {
   return (
-    <div>
+    <div className='search-input'>
         <input
             autoFocus
             onChange={onInputChange}

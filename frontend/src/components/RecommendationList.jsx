@@ -28,17 +28,17 @@ export default function RecommendationList({ selectedSong }) {
     };
 
     return (
-        <div>
+        <div className='recommendations-div'>
             <h2>Songs similar to:</h2>
-            <p>{selectedSong.name} - {selectedSong.artist}</p>
+            <h2>⭐️ {selectedSong.name} - {selectedSong.artist} ⭐️</h2>
             {loading && (
                 <p>Loading recommendations...</p>
             )}
             {recs.length > 0 ? (
-                <ul>
+                <ul className='recs-list'>
                     {recs.map((rec, index) => (
                         <li key={index}>
-                            {rec.name} = {rec.artist}
+                            {rec.name} - {rec.artist}
                         </li>
                     ))}
                 </ul>
